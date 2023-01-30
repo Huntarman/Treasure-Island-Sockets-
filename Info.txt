@@ -29,6 +29,8 @@ Problem specification:
 	(a separate port is opened for each "player"), "manager" knows the host and port on which "player" listens for incoming replies (host and port is unique to a given "player")
      -the way of transferring the parameters of hosts and ports to "players" and "manager" is free, but these data cannot be entered hard in the source code
      -both the "player" and the "manager" have a graphical interface where you can observe the state of the board (respectively - explored by the "player" and managed by the "manager").
+     
+     Personnaly I created a text file that is used to generate a map.
 
 Final grade: 3.0 - I am extremely dissatisfied with the way I wrote this task. There weren't really glaring problems with specification, rather the code is ugly, hard to navigate, and barely
 			 classifies as OOP. This one I will be revisiting when I have free time - for sure, rewriting it from scratch.
