@@ -32,5 +32,5 @@ Problem specification:
      
      Personnaly I created a text file that is used to generate a map.
 
-Final grade: 3.0 - I am extremely dissatisfied with the way I wrote this task. There weren't really glaring problems with specification, rather the code is ugly, hard to navigate, and barely
+Grade: 3.0 - I am extremely dissatisfied with the way I wrote this task. There weren't really glaring problems with specification, rather the code is ugly, hard to navigate, and barely
 			 classifies as OOP. This one I will be revisiting when I have free time - for sure, rewriting it from scratch.
