@@ -1,0 +1,34 @@
+During the laboratory, you should build an application operating in a distributed environment, using TCP/IP sockets (ServerSocket, Socket classes) for communication.
+More precisely - a small system should be implemented, which will include instances of classes run in parallel (on one or several different computers).
+This system is to be a simulator of the game "Treasure Island".
+Problem specification:
+
+     -the game involves "players" (there may be several of them) communicating with the "manager" (who is only one)
+     -the game takes place on a rectangular board with a given height and width (the product of height and width defines the number of board fields)
+     -each field of the board can contain: nothing, an obstacle, a treasure, a player (the player cannot enter a field with an obstacle,
+	but can enter a field with a treasure or an empty field).
+     -the "manager" owns the entire board and is responsible for providing information about it to the players on request,
+	as well as changes the state of the board on the basis of requests from players.
+     -players move around the board, moving from one field to an adjacent field (there are 8 adjacent fields) and perform actions on it.
+     -in order for any change to take place, the given "player" must send the "manager" the appropriate command
+     -a given player can send the following commands to the "manager":
+     		>inquiry about the surroundings ("see" command), in response they receive the state of their surroundings 
+		 (more precisely - each player being in a given position can "see" only his immediate surroundings, i.e. eight adjacent fields)
+     		>making a move ("move" command), in response they receive information about the status of the move (the move has been made or the move has not been made),
+     		>take the treasure (command "take"), in response they receive information about the status of the move made
+		 (they receive a treasure or information that the treasure could not be picked up)
+     -the goal of each player is to collect as many treasures as possible in the shortest amount of time
+     -taking the treasure is not mandatory, because each treasure needs to be "unpacked" after taking it, and this takes time
+     -"unpacking" a treasure can be simulated by putting a waiting time in its description
+     -we assume that the "player" will wait honestly for the time of "unpacking".
+     -at the beginning of the game, players are placed in randomly selected places known only to the "manager"
+     -during the game, players should build their own "board model" to explore new places during their moves
+     -commands sent to the "manager" go to a queue, which the "manager" processes in the order in which they were received
+     -although the encoding of the transmitted information can be arbitrary, text encoding is recommended (a string of characters, not a serialized object)
+     -"player" knows the host and port on which "manager" listens for incoming commands 
+	(a separate port is opened for each "player"), "manager" knows the host and port on which "player" listens for incoming replies (host and port is unique to a given "player")
+     -the way of transferring the parameters of hosts and ports to "players" and "manager" is free, but these data cannot be entered hard in the source code
+     -both the "player" and the "manager" have a graphical interface where you can observe the state of the board (respectively - explored by the "player" and managed by the "manager").
+
+Final grade: 3.0 - I am extremely dissatisfied with the way I wrote this task. There weren't really glaring problems with specification, rather the code is ugly, hard to navigate, and barely
+			 classifies as OOP. This one I will be revisiting when I have free time - for sure, rewriting it from scratch.
